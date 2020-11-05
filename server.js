@@ -52,3 +52,9 @@ app.use(function(err, req, res, next) {
 });
 
 module.exports = app;
+
+let port = process.env.PORT;
+if (port == null || port == ""){
+	port = 3000
+}	
+app.listen(port, () => console.log("Application running on port "+port));
